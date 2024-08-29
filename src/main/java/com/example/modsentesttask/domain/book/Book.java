@@ -42,7 +42,4 @@ public class Book implements Serializable {
     )
     private List<Author> authors;
 
-    @Column(nullable = false)
-    private String author;
-
 }
