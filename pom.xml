@@ -21,6 +21,7 @@
         <postgresql.version>42.7.4</postgresql.version>
         <lombok.version>1.18.34</lombok.version>
         <liquibase.version>4.29.1</liquibase.version>
+        <preliquibase.version>1.5.1</preliquibase.version>
     </properties>
 
     <dependencies>
@@ -54,6 +55,12 @@
             <artifactId>liquibase-core</artifactId>
             <version>${liquibase.version}</version>
         </dependency>
+        <dependency>
+            <groupId>net.lbruun.springboot</groupId>
+            <artifactId>preliquibase-spring-boot-starter</artifactId>
+            <version>${preliquibase.version}</version>
+        </dependency>
+
 
     </dependencies>
 
