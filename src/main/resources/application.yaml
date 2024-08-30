@@ -21,4 +21,9 @@ spring:
   liquibase:
     change-log: classpath:liquibase/db.changelog.xml
     enabled: true
-    default-schema: ${POSTGRES_SCHEMA}
+    default-schema: library
+
+preliquibase:
+  enabled: true
+  sql-script-references: classpath:preliquibase/create_schema.sql
+
