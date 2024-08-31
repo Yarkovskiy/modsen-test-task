@@ -2,9 +2,11 @@ package com.example.modsentesttask.service.impl;
 
 import com.example.modsentesttask.domain.book.Book;
 import com.example.modsentesttask.service.BookService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BookServiceImpl implements BookService {
 
     @Override

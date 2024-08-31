@@ -2,7 +2,9 @@ package com.example.modsentesttask.service.impl;
 
 import com.example.modsentesttask.domain.user.User;
 import com.example.modsentesttask.service.UserService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Override
