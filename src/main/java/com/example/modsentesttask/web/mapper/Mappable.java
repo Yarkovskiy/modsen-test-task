@@ -2,12 +2,12 @@ package com.example.modsentesttask.web.mapper;
 
 import java.util.List;
 
-public interface Mappable<E, D> {
+public interface Mappable<E, ReqD, ResD> {
 
-    D toDto(E entity);
+    ResD toResponseDto(E entity);
 
-    List<D> toDto(List<E> entities);
+    List<ResD> toResponseDto(List<E> entities);
 
-    E toEntity(D dto);
+    E toEntity(ReqD dto);
 
 }
