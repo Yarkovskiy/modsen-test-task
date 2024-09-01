@@ -20,7 +20,4 @@ public class Author implements Serializable {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany(mappedBy = "authors")
-    private List<Book> books;
-
 }

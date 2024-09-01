@@ -20,7 +20,4 @@ public class Genre implements Serializable {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "genres")
-    private List<Book> books;
-
 }
