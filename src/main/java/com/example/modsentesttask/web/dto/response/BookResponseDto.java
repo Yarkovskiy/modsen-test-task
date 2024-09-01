@@ -1,11 +1,11 @@
-package com.example.modsentesttask.web.dto.book;
+package com.example.modsentesttask.web.dto.response;
 
 import com.example.modsentesttask.domain.book.Author;
 import com.example.modsentesttask.domain.book.Genre;
 
 import java.util.List;
 
-public record BookDto(
+public record BookResponseDto(
 
         Long id,
         String isbn,
