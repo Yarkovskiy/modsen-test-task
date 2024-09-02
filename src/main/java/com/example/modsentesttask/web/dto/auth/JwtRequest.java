@@ -1,13 +1,16 @@
 package com.example.modsentesttask.web.dto.auth;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
-public record JwtRequest(
+@Getter
+@Setter
+public class JwtRequest {
 
-        @NotNull(message = "{email.notnull}")
-        String username,
+    @NotNull(message = "{email.notnull}")
+    String username;
 
-        @NotNull(message = "{password.notnull}")
-        String password
-) {
+    @NotNull(message = "{password.notnull}")
+    String password;
 }

@@ -1,10 +1,15 @@
 package com.example.modsentesttask.web.dto.auth;
 
-public record JwtResponse(
+import lombok.Getter;
+import lombok.Setter;
 
-        Long id,
-        String username,
-        String accessToken,
-        String refreshToken
-) {
+@Getter
+@Setter
+public class JwtResponse {
+
+    Long id;
+    String username;
+    String accessToken;
+    String refreshToken;
+
 }
