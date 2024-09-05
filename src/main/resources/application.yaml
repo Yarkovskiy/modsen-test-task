@@ -9,11 +9,10 @@ spring:
     username: ${POSTGRES_USERNAME}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
@@ -23,7 +22,20 @@ spring:
     enabled: true
     default-schema: library
 
+
+
 preliquibase:
   enabled: true
   sql-script-references: classpath:preliquibase/create_schema.sql
 
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+    access: 1
+    refresh: 30
+
+springdoc:
+  override-with-generic-response: false
+  swagger-ui:
+    tagsSorter: alpha
+    operations-sorter: method
