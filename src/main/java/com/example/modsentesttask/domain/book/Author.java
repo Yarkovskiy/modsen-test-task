@@ -3,6 +3,7 @@ package com.example.modsentesttask.domain.book;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Table(name = "authors")
 @Getter
 @Setter
+@ToString
 public class Author implements Serializable {
 
     @Id
