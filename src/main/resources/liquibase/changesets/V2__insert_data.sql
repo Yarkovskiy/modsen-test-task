@@ -12,12 +12,12 @@ values ('First Author'),
        ('Second Author');
 
 insert into genres (name)
-values ('First genre'),
-       ('Second genre');
+values ('first genre'),
+       ('second genre');
 
 insert into books (isbn, title, description)
 values ('0-123-45678-9', 'First book', 'Description of the first book.'),
-       ('9-976-54321-0', 'Second book', 'Description of the second book.');
+       ('9-876-54321-0', 'Second book', 'Description of the second book.');
 
 insert into book_author (book_id, author_id)
 values (1, 1),

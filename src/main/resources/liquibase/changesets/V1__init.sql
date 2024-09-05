@@ -15,7 +15,7 @@ create table if not exists authors
 create table if not exists genres
 (
     id   bigserial primary key,
-    name varchar(255)
+    name varchar(255) not null unique
 );
 
 create table if not exists book_author
