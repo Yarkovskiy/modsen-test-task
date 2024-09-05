@@ -12,6 +12,8 @@ public interface BookService {
 
     Book getByIsbn(String isbn);
 
+    boolean existsById(Long id);
+
     Book create(Book book);
 
     Book update(Book book);

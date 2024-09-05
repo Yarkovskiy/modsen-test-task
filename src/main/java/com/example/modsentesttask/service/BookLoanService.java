@@ -6,13 +6,15 @@ import java.util.List;
 
 public interface BookLoanService {
 
-    List<BookLoan> getAllByUserId(int userId);
+    List<BookLoan> getAll();
 
-    boolean isBookAlreadyLoaned(Long bookId);
+    BookLoan getById(Long id);
+
+    List<BookLoan> getAllByUserId(Long userId);
+
+    BookLoan getByBookId(Long bookId);
 
     BookLoan create(BookLoan bookLoan);
-
-    BookLoan update(BookLoan bookLoan);
 
     void delete(Long id);
 

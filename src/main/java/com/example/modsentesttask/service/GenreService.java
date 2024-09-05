@@ -2,7 +2,13 @@ package com.example.modsentesttask.service;
 
 import com.example.modsentesttask.domain.book.Genre;
 
+import java.util.List;
+
 public interface GenreService {
+
+    List<Genre> getAll();
+
+    List<Genre> getAllByIdIn(List<Long> ids);
 
     Genre getById(Long id);
 
