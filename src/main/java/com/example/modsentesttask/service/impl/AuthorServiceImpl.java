@@ -6,10 +6,12 @@ import com.example.modsentesttask.repository.AuthorRepository;
 import com.example.modsentesttask.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class AuthorServiceImpl implements AuthorService {
 
@@ -37,11 +39,13 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
+    @Transactional
     public Author create(Author author) {
         return authorRepository.save(author);
     }
 
     @Override
+    @Transactional
     public Author update(Author author) {
         Author existingAuthor = getById(author.getId());
         existingAuthor.setName(author.getName());
@@ -49,6 +53,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         authorRepository.deleteById(id);
     }

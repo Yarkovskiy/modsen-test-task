@@ -6,10 +6,12 @@ import com.example.modsentesttask.repository.GenreRepository;
 import com.example.modsentesttask.service.GenreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class GenreServiceImpl implements GenreService {
 
@@ -38,6 +40,7 @@ public class GenreServiceImpl implements GenreService {
     }
 
     @Override
+    @Transactional
     public Genre create(Genre genre) {
         if (genreRepository.existsByName(genre.getName())) {
             throw new IllegalArgumentException("Genre with name: " + genre.getName() + " already exists");
@@ -46,6 +49,7 @@ public class GenreServiceImpl implements GenreService {
     }
 
     @Override
+    @Transactional
     public Genre update(Genre genre) {
         Genre existingGenre = getById(genre.getId());
 
@@ -60,6 +64,7 @@ public class GenreServiceImpl implements GenreService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         genreRepository.deleteById(id);
     }

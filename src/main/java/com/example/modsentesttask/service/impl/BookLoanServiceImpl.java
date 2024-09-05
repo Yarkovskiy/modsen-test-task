@@ -10,10 +10,12 @@ import com.example.modsentesttask.service.BookService;
 import com.example.modsentesttask.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class BookLoanServiceImpl implements BookLoanService {
 
@@ -49,6 +51,7 @@ public class BookLoanServiceImpl implements BookLoanService {
     }
 
     @Override
+    @Transactional
     public BookLoan create(BookLoan bookLoan) {
 
         Book book = bookLoan.getBook();
@@ -69,6 +72,7 @@ public class BookLoanServiceImpl implements BookLoanService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         bookLoanRepository.deleteById(id);
     }

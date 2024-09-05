@@ -10,11 +10,13 @@ import com.example.modsentesttask.service.BookService;
 import com.example.modsentesttask.service.GenreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
 
@@ -46,6 +48,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Transactional
     public Book create(Book book) {
         if (bookRepository.existsByIsbn(book.getIsbn())) {
             throw new IllegalArgumentException("ISBN already exists: " + book.getIsbn());
@@ -75,6 +78,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Transactional
     public Book update(Book book) {
         Book existingBook = getById(book.getId());
 
@@ -113,6 +117,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         bookRepository.deleteById(id);
     }
